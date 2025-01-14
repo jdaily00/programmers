@@ -1,12 +1,15 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         
-        long A = sc.nextLong();
-        long B = sc.nextLong();
-        long C = sc.nextLong();
+        String[] input = br.readLine().split(" ");
+        long A = Long.parseLong(input[0]);
+        long B = Long.parseLong(input[1]);
+        long C = Long.parseLong(input[2]);
 
         System.out.println(A + B + C);
     }
