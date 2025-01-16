@@ -1,21 +1,26 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         
-        int H = sc.nextInt();
-        int M = sc.nextInt();
+        // 입력을 한 줄로 받아서 공백으로 분리
+        String[] input = br.readLine().split(" ");
         
-        M -=45;
-        if (0>M) {
-            M+=60;
-            H-=1;
-         
-            if (0>H) {
-            H=23;
+        int H = Integer.parseInt(input[0]);
+        int M = Integer.parseInt(input[1]);
+        
+        M -= 45;
+        if (M < 0) {
+            M += 60;
+            H -= 1;
+            
+            if (H < 0) {
+                H = 23;
             }
         }
-        System.out.println(H+" "+M);
+        System.out.println(H + " " + M);
     }
 }
